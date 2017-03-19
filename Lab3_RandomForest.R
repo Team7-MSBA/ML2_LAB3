@@ -1,4 +1,4 @@
-#Bagging
+#####Bagging#####
 rm(list=ls())
 cat("\f")
 remove(list = ls())
@@ -95,7 +95,6 @@ plot(nvars, test.error, type = "b", xlab = "nvars", ylab = "Test MSE", col = "bl
 
 plot(nvars, train.errorsI, type = "b", xlab = "nvars", ylab = "Train I", col = "blue", pch = 20)
 plot(nvars, train.errorsII, type = "b", xlab = "nvars", ylab = "Train II", col = "blue", pch = 20, las =2)
-################## Final Forest Model
 
 
 
