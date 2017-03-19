@@ -1,3 +1,40 @@
+#Bagging
+rm(list=ls())
+cat("\f")
+remove(list = ls())
+set.seed(5072)
+#setwd("C:/Users/Matt/rdata")
+library(randomForest)
+library(tree)
+library(gbm)
+#install.packages('dplyr')
+library(dplyr)
+
+data <- read.csv("Lab3Data.csv")
+data <- na.omit(data)
+data <- data[-1]
+names(data) <- tolower(names(data)) 
+names(data)
+head(data$churn)
+train <-  sample(1:nrow(data), .8 * nrow(data))
+
+data.train <- data[train,]
+data.test <- data[-train,]
+train.churn <- as.vector(data[train,]$churn)
+test.churn <-  data[-train,"churn"]
+
+#Fit Model
+rf.fit <- randomForest(churn~., data=data, subset=train, importance =TRUE, ntree=100)
+pred.rf.train <- predict(rf.fit, newdata=data[train ,])
+pred.rf.test <- predict(rf.fit, newdata=data[-train ,])
+summary(rf.fit)
+rf.fit
+
+
+
+
+
+
 cat("\f")
 remove(list = ls())
 #setwd("C:/MSBA/Spring2017/MachineLearning2/Lab3")
