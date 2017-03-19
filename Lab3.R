@@ -1,5 +1,6 @@
 #### Lab 3 ####
-
+#Team 7 Machine Learning 2
+#Brittany Hayes, Matthew Esporrin, Verghese Polakunnil, Lisha Shangguan
 ####Best Overall Model####
 ################################ Boosting ( using full data set to train) ####################################
 
@@ -182,7 +183,7 @@ type2[4]=mytable[2]/(mytable[2]+mytable[4])
 #this method gives around a 19% error rate
 
 
-#Bagging
+##Bagging##
 rm(list=ls())
 cat("\f")
 remove(list = ls())
@@ -279,7 +280,7 @@ plot(nvars, test.error, type = "b", xlab = "nvars", ylab = "Test MSE", col = "bl
 
 plot(nvars, train.errorsI, type = "b", xlab = "nvars", ylab = "Train I", col = "blue", pch = 20)
 plot(nvars, train.errorsII, type = "b", xlab = "nvars", ylab = "Train II", col = "blue", pch = 20, las =2)
-################## Final Forest Model
+
 
 
 
